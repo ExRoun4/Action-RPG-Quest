@@ -1,0 +1,184 @@
+[gd_scene load_steps=29 format=2]
+
+[ext_resource path="res://sprites/UI/Menu/Title.png" type="Texture" id=1]
+[ext_resource path="res://sprites/UI/Menu/PlayPressed.png" type="Texture" id=2]
+[ext_resource path="res://sprites/UI/Menu/Play.png" type="Texture" id=3]
+[ext_resource path="res://sprites/UI/Menu/Quit.png" type="Texture" id=4]
+[ext_resource path="res://sprites/UI/Menu/Options.png" type="Texture" id=5]
+[ext_resource path="res://sprites/UI/Menu/QuitPressed.png" type="Texture" id=6]
+[ext_resource path="res://sprites/UI/Menu/OptionsPressed.png" type="Texture" id=7]
+[ext_resource path="res://sprites/World/GrassBackground.png" type="Texture" id=8]
+[ext_resource path="res://scripts/Player/Menu.gd" type="Script" id=9]
+[ext_resource path="res://sprites/UI/Menu/OptionsPanel.png" type="Texture" id=10]
+
+[sub_resource type="StyleBoxTexture" id=6]
+texture = ExtResource( 3 )
+region_rect = Rect2( 0, 0, 38, 19 )
+
+[sub_resource type="StyleBoxTexture" id=1]
+texture = ExtResource( 2 )
+region_rect = Rect2( 0, 0, 38, 19 )
+
+[sub_resource type="StyleBoxEmpty" id=4]
+
+[sub_resource type="StyleBoxEmpty" id=5]
+
+[sub_resource type="StyleBoxTexture" id=2]
+texture = ExtResource( 3 )
+region_rect = Rect2( 0, 0, 38, 19 )
+
+[sub_resource type="StyleBoxTexture" id=7]
+texture = ExtResource( 5 )
+region_rect = Rect2( 0, 0, 38, 19 )
+
+[sub_resource type="StyleBoxTexture" id=8]
+texture = ExtResource( 7 )
+region_rect = Rect2( 0, 0, 38, 19 )
+
+[sub_resource type="StyleBoxTexture" id=9]
+texture = ExtResource( 5 )
+region_rect = Rect2( 0, 0, 38, 19 )
+
+[sub_resource type="StyleBoxTexture" id=10]
+texture = ExtResource( 4 )
+region_rect = Rect2( 0, 0, 38, 19 )
+
+[sub_resource type="StyleBoxTexture" id=11]
+texture = ExtResource( 6 )
+region_rect = Rect2( 0, 0, 38, 19 )
+
+[sub_resource type="StyleBoxEmpty" id=18]
+
+[sub_resource type="StyleBoxEmpty" id=19]
+
+[sub_resource type="StyleBoxTexture" id=12]
+texture = ExtResource( 4 )
+region_rect = Rect2( 0, 0, 38, 19 )
+
+[sub_resource type="StyleBoxEmpty" id=13]
+
+[sub_resource type="StyleBoxEmpty" id=14]
+
+[sub_resource type="StyleBoxEmpty" id=15]
+
+[sub_resource type="StyleBoxEmpty" id=16]
+
+[sub_resource type="StyleBoxEmpty" id=17]
+
+[node name="Menu" type="Node2D"]
+script = ExtResource( 9 )
+
+[node name="Sprite" type="Sprite" parent="."]
+position = Vector2( 160, 104 )
+texture = ExtResource( 8 )
+region_enabled = true
+region_rect = Rect2( 0, -128, 848, 464 )
+
+[node name="Canvas" type="CanvasLayer" parent="."]
+
+[node name="Title" type="TextureRect" parent="Canvas"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -88.0
+margin_top = -66.0
+margin_right = 87.0
+margin_bottom = -32.0
+texture = ExtResource( 1 )
+
+[node name="Buttons" type="Control" parent="Canvas"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -20.0
+margin_top = -20.0
+margin_right = 20.0
+margin_bottom = 20.0
+
+[node name="Play" type="Button" parent="Canvas/Buttons"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -32.0
+margin_top = -18.0
+margin_right = 32.0
+margin_bottom = 2.0
+custom_styles/hover = SubResource( 6 )
+custom_styles/pressed = SubResource( 1 )
+custom_styles/focus = SubResource( 4 )
+custom_styles/disabled = SubResource( 5 )
+custom_styles/normal = SubResource( 2 )
+
+[node name="Options" type="Button" parent="Canvas/Buttons"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -32.0
+margin_top = 14.0
+margin_right = 32.0
+margin_bottom = 34.0
+custom_styles/hover = SubResource( 7 )
+custom_styles/pressed = SubResource( 8 )
+custom_styles/focus = SubResource( 4 )
+custom_styles/disabled = SubResource( 5 )
+custom_styles/normal = SubResource( 9 )
+
+[node name="Quit" type="Button" parent="Canvas/Buttons"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -32.0
+margin_top = 46.0
+margin_right = 32.0
+margin_bottom = 66.0
+custom_styles/hover = SubResource( 10 )
+custom_styles/pressed = SubResource( 11 )
+custom_styles/focus = SubResource( 18 )
+custom_styles/disabled = SubResource( 19 )
+custom_styles/normal = SubResource( 12 )
+
+[node name="OptionsPanel" type="Control" parent="Canvas"]
+visible = false
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -20.0
+margin_top = 3.0
+margin_right = 20.0
+margin_bottom = 43.0
+
+[node name="BG" type="TextureRect" parent="Canvas/OptionsPanel"]
+margin_left = -76.0
+margin_top = -33.0
+margin_right = -12.0
+margin_bottom = -8.0
+rect_scale = Vector2( 3, 3 )
+texture = ExtResource( 10 )
+
+[node name="Back" type="Button" parent="Canvas/OptionsPanel"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -30.0
+margin_top = 22.0
+margin_right = 30.0
+margin_bottom = 40.0
+custom_styles/hover = SubResource( 13 )
+custom_styles/pressed = SubResource( 14 )
+custom_styles/focus = SubResource( 15 )
+custom_styles/disabled = SubResource( 16 )
+custom_styles/normal = SubResource( 17 )
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+
+[connection signal="pressed" from="Canvas/Buttons/Play" to="." method="_on_Play_pressed"]
+[connection signal="pressed" from="Canvas/Buttons/Options" to="." method="_on_Options_pressed"]
+[connection signal="pressed" from="Canvas/Buttons/Quit" to="." method="_on_Quit_pressed"]
+[connection signal="pressed" from="Canvas/OptionsPanel/Back" to="." method="_on_Back_pressed"]

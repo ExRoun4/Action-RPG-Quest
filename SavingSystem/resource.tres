@@ -1,0 +1,13 @@
+[gd_resource type="Resource" load_steps=2 format=2]
+
+[ext_resource path="res://SavingSystem/ResourceHolder.gd" type="Script" id=1]
+
+[resource]
+script = ExtResource( 1 )
+current_quest = 0
+quest_name = "none"
+quest_type = "none"
+maxQuests = 6
+questKills = [ 0, 0 ]
+maxQuestKills = [ 4, 0 ]
+gloriaPos = Vector2( 155, -85 )

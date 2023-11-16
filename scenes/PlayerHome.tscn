@@ -1,0 +1,897 @@
+[gd_scene load_steps=72 format=2]
+
+[ext_resource path="res://sprites/PlayerHome/Wall.png" type="Texture" id=1]
+[ext_resource path="res://prefabs/Player.tscn" type="PackedScene" id=2]
+[ext_resource path="res://sprites/PlayerHome/floor.png" type="Texture" id=3]
+[ext_resource path="res://sprites/PlayerHome/WallBottom.png" type="Texture" id=4]
+[ext_resource path="res://sprites/PlayerHome/Exit.png" type="Texture" id=5]
+[ext_resource path="res://sprites/PlayerHome/WallRight.png" type="Texture" id=6]
+[ext_resource path="res://sprites/PlayerHome/WallLeft.png" type="Texture" id=7]
+[ext_resource path="res://sprites/PlayerHome/Furniture/Sofa.png" type="Texture" id=8]
+[ext_resource path="res://sprites/PlayerHome/Furniture/Armchair.png" type="Texture" id=9]
+[ext_resource path="res://sprites/PlayerHome/Furniture/Carpet.png" type="Texture" id=10]
+[ext_resource path="res://sprites/PlayerHome/Furniture/Lamp.png" type="Texture" id=11]
+[ext_resource path="res://sprites/Shadows/MediumShadow.png" type="Texture" id=12]
+[ext_resource path="res://sprites/PlayerHome/Furniture/Kitchen.png" type="Texture" id=13]
+[ext_resource path="res://sprites/PlayerHome/Furniture/Stove.png" type="Texture" id=14]
+[ext_resource path="res://sprites/PlayerHome/Furniture/Fridge.png" type="Texture" id=15]
+[ext_resource path="res://sprites/PlayerHome/Furniture/Table.png" type="Texture" id=16]
+[ext_resource path="res://SavingSystem/SaveAndLoad.gd" type="Script" id=17]
+[ext_resource path="res://sprites/PlayerHome/Furniture/Chair2.png" type="Texture" id=18]
+[ext_resource path="res://sprites/PlayerHome/Furniture/Chair1.png" type="Texture" id=19]
+[ext_resource path="res://SavingSystem/resource.tres" type="Resource" id=20]
+[ext_resource path="res://scripts/Player/QuestSystem.gd" type="Script" id=21]
+[ext_resource path="res://scripts/World/PlayerHouse.gd" type="Script" id=22]
+[ext_resource path="res://prefabs/NPC/GloriaNPC.tscn" type="PackedScene" id=23]
+[ext_resource path="res://sprites/NPC/GloriaIcon.png" type="Texture" id=24]
+[ext_resource path="res://scripts/Player/GameUI.gd" type="Script" id=25]
+[ext_resource path="res://sprites/UI/Menu.png" type="Texture" id=26]
+[ext_resource path="res://sprites/UI/PausePanel.png" type="Texture" id=27]
+[ext_resource path="res://sprites/UI/MenuPressed.png" type="Texture" id=28]
+[ext_resource path="res://ofont.ru_Calypso.ttf" type="DynamicFontData" id=29]
+[ext_resource path="res://sprites/UI/Retry.png" type="Texture" id=30]
+[ext_resource path="res://sprites/UI/RetryPressed.png" type="Texture" id=31]
+[ext_resource path="res://sprites/PlayerHome/Furniture/Bed.png" type="Texture" id=32]
+
+[sub_resource type="ConvexPolygonShape2D" id=6]
+points = PoolVector2Array( 0, 0, 64, 0, 64, 68, 0, 68 )
+
+[sub_resource type="TileSet" id=1]
+0/name = "Wall.png 0"
+0/texture = ExtResource( 1 )
+0/tex_offset = Vector2( 0, 0 )
+0/modulate = Color( 1, 1, 1, 1 )
+0/region = Rect2( 0, 0, 64, 68 )
+0/tile_mode = 0
+0/occluder_offset = Vector2( 0, 0 )
+0/navigation_offset = Vector2( 0, 0 )
+0/shape_offset = Vector2( 0, 0 )
+0/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
+0/shape = SubResource( 6 )
+0/shape_one_way = false
+0/shape_one_way_margin = 1.0
+0/shapes = [ {
+"autotile_coord": Vector2( 0, 0 ),
+"one_way": false,
+"one_way_margin": 1.0,
+"shape": SubResource( 6 ),
+"shape_transform": Transform2D( 1, 0, 0, 1, 0, 0 )
+} ]
+0/z_index = 0
+
+[sub_resource type="ConvexPolygonShape2D" id=3]
+points = PoolVector2Array( 0, 0, 64, 0, 64, 4, 0, 4 )
+
+[sub_resource type="ConvexPolygonShape2D" id=5]
+points = PoolVector2Array( 0, 0, 65, 0, 65, 4, 0, 4 )
+
+[sub_resource type="TileSet" id=4]
+0/name = "WallBottom.png 0"
+0/texture = ExtResource( 4 )
+0/tex_offset = Vector2( 0, 0 )
+0/modulate = Color( 1, 1, 1, 1 )
+0/region = Rect2( 0, 0, 64, 4 )
+0/tile_mode = 0
+0/occluder_offset = Vector2( 0, 0 )
+0/navigation_offset = Vector2( 0, 0 )
+0/shape_offset = Vector2( 0, 0 )
+0/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
+0/shape = SubResource( 3 )
+0/shape_one_way = false
+0/shape_one_way_margin = 1.0
+0/shapes = [ {
+"autotile_coord": Vector2( 0, 0 ),
+"one_way": false,
+"one_way_margin": 1.0,
+"shape": SubResource( 3 ),
+"shape_transform": Transform2D( 1, 0, 0, 1, 0, 0 )
+} ]
+0/z_index = 0
+1/name = "Exit.png 1"
+1/texture = ExtResource( 5 )
+1/tex_offset = Vector2( 0, 0 )
+1/modulate = Color( 1, 1, 1, 1 )
+1/region = Rect2( 0, 0, 65, 4 )
+1/tile_mode = 0
+1/occluder_offset = Vector2( 0, 0 )
+1/navigation_offset = Vector2( 0, 0 )
+1/shape_offset = Vector2( 0, 0 )
+1/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
+1/shape = SubResource( 5 )
+1/shape_one_way = false
+1/shape_one_way_margin = 1.0
+1/shapes = [ {
+"autotile_coord": Vector2( 0, 0 ),
+"one_way": false,
+"one_way_margin": 1.0,
+"shape": SubResource( 5 ),
+"shape_transform": Transform2D( 1, 0, 0, 1, 0, 0 )
+} ]
+1/z_index = 0
+
+[sub_resource type="ConvexPolygonShape2D" id=7]
+points = PoolVector2Array( 0, 0, 4, 0, 4, 47, 0, 47 )
+
+[sub_resource type="ConvexPolygonShape2D" id=9]
+points = PoolVector2Array( 0, 0, 4, 0, 4, 47, 0, 47 )
+
+[sub_resource type="TileSet" id=8]
+0/name = "WallRight.png 0"
+0/texture = ExtResource( 6 )
+0/tex_offset = Vector2( 0, 0 )
+0/modulate = Color( 1, 1, 1, 1 )
+0/region = Rect2( 0, 0, 4, 47 )
+0/tile_mode = 0
+0/occluder_offset = Vector2( 0, 0 )
+0/navigation_offset = Vector2( 0, 0 )
+0/shape_offset = Vector2( 0, 0 )
+0/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
+0/shape = SubResource( 7 )
+0/shape_one_way = false
+0/shape_one_way_margin = 1.0
+0/shapes = [ {
+"autotile_coord": Vector2( 0, 0 ),
+"one_way": false,
+"one_way_margin": 1.0,
+"shape": SubResource( 7 ),
+"shape_transform": Transform2D( 1, 0, 0, 1, 0, 0 )
+} ]
+0/z_index = 0
+1/name = "WallLeft.png 1"
+1/texture = ExtResource( 7 )
+1/tex_offset = Vector2( 0, 0 )
+1/modulate = Color( 1, 1, 1, 1 )
+1/region = Rect2( 0, 0, 4, 47 )
+1/tile_mode = 0
+1/occluder_offset = Vector2( 0, 0 )
+1/navigation_offset = Vector2( 0, 0 )
+1/shape_offset = Vector2( 0, 0 )
+1/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
+1/shape = SubResource( 9 )
+1/shape_one_way = false
+1/shape_one_way_margin = 1.0
+1/shapes = [ {
+"autotile_coord": Vector2( 0, 0 ),
+"one_way": false,
+"one_way_margin": 1.0,
+"shape": SubResource( 9 ),
+"shape_transform": Transform2D( 1, 0, 0, 1, 0, 0 )
+} ]
+1/z_index = 0
+
+[sub_resource type="TileSet" id=2]
+0/name = "floor.png 0"
+0/texture = ExtResource( 3 )
+0/tex_offset = Vector2( 0, 0 )
+0/modulate = Color( 1, 1, 1, 1 )
+0/region = Rect2( 0, 0, 64, 48 )
+0/tile_mode = 0
+0/occluder_offset = Vector2( 0, 0 )
+0/navigation_offset = Vector2( 0, 0 )
+0/shape_offset = Vector2( 0, 0 )
+0/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
+0/shape_one_way = false
+0/shape_one_way_margin = 0.0
+0/shapes = [  ]
+0/z_index = 0
+
+[sub_resource type="RectangleShape2D" id=10]
+extents = Vector2( 60, 10 )
+
+[sub_resource type="RectangleShape2D" id=11]
+extents = Vector2( 1, 10 )
+
+[sub_resource type="RectangleShape2D" id=12]
+extents = Vector2( 85.5, 17 )
+
+[sub_resource type="RectangleShape2D" id=13]
+extents = Vector2( 10, 9.5 )
+
+[sub_resource type="RectangleShape2D" id=83]
+extents = Vector2( 24, 24 )
+
+[sub_resource type="RectangleShape2D" id=72]
+extents = Vector2( 16, 12 )
+
+[sub_resource type="DynamicFont" id=73]
+font_data = ExtResource( 29 )
+
+[sub_resource type="DynamicFont" id=74]
+font_data = ExtResource( 29 )
+
+[sub_resource type="Animation" id=68]
+resource_name = "Idle"
+length = 0.001
+tracks/0/type = "value"
+tracks/0/path = NodePath("ColorRect:color")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Color( 0, 0, 0, 1 ) ]
+}
+
+[sub_resource type="Animation" id=69]
+resource_name = "In"
+length = 0.4
+tracks/0/type = "value"
+tracks/0/path = NodePath("ColorRect:color")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.4 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Color( 0, 0, 0, 0 ), Color( 0, 0, 0, 1 ) ]
+}
+
+[sub_resource type="Animation" id=71]
+resource_name = "Out"
+length = 0.4
+step = 0.01
+tracks/0/type = "value"
+tracks/0/path = NodePath("ColorRect:color")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.4 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Color( 0, 0, 0, 1 ), Color( 0, 0, 0, 0 ) ]
+}
+
+[sub_resource type="Animation" id=70]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/path = NodePath("ColorRect:color")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Color( 0, 0, 0, 0 ) ]
+}
+
+[sub_resource type="StyleBoxTexture" id=79]
+texture = ExtResource( 30 )
+region_rect = Rect2( 0, 0, 38, 19 )
+
+[sub_resource type="StyleBoxTexture" id=80]
+texture = ExtResource( 31 )
+region_rect = Rect2( 0, 0, 38, 19 )
+
+[sub_resource type="StyleBoxEmpty" id=82]
+
+[sub_resource type="StyleBoxEmpty" id=75]
+
+[sub_resource type="StyleBoxTexture" id=81]
+texture = ExtResource( 30 )
+region_rect = Rect2( 0, 0, 38, 19 )
+
+[sub_resource type="StyleBoxTexture" id=60]
+texture = ExtResource( 26 )
+region_rect = Rect2( 0, 0, 38, 19 )
+
+[sub_resource type="StyleBoxTexture" id=61]
+texture = ExtResource( 28 )
+region_rect = Rect2( 0, 0, 38, 16 )
+
+[sub_resource type="StyleBoxEmpty" id=53]
+
+[sub_resource type="StyleBoxEmpty" id=54]
+
+[sub_resource type="StyleBoxTexture" id=62]
+texture = ExtResource( 26 )
+region_rect = Rect2( 0, 0, 38, 19 )
+
+[sub_resource type="Animation" id=56]
+resource_name = "Idle"
+length = 0.001
+tracks/0/type = "value"
+tracks/0/path = NodePath("BG:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 0 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("Panel:rect_position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( -100, 0 ) ]
+}
+
+[sub_resource type="Animation" id=57]
+resource_name = "Pause"
+length = 0.3
+tracks/0/type = "value"
+tracks/0/path = NodePath("BG:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.3 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 1 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("Panel:rect_position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 0.3 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Vector2( -100, 0 ), Vector2( 0, 0 ) ]
+}
+
+[sub_resource type="Animation" id=58]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/path = NodePath("BG:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 1 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("Panel:rect_position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( 0, 0 ) ]
+}
+
+[sub_resource type="Animation" id=59]
+resource_name = "Unpause"
+length = 0.3
+tracks/0/type = "value"
+tracks/0/path = NodePath("BG:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.3 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 0 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("Panel:rect_position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 0.3 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Vector2( 0, 0 ), Vector2( -100, 0 ) ]
+}
+
+[sub_resource type="DynamicFont" id=84]
+font_data = ExtResource( 29 )
+
+[sub_resource type="Animation" id=85]
+resource_name = "Animate"
+length = 10.0
+tracks/0/type = "value"
+tracks/0/path = NodePath("Text:percent_visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 2, 7 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 0,
+"values": [ 0.0, 0.0, 1.0 ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("Menu:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 2, 8.1 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 1,
+"values": [ false, false, true ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("Menu:modulate")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0, 2, 8.1, 9.8 ),
+"transitions": PoolRealArray( 1, 1, 1, 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 1 ) ]
+}
+
+[sub_resource type="Animation" id=86]
+resource_name = "Idle"
+length = 0.001
+tracks/0/type = "value"
+tracks/0/path = NodePath("Menu:visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ false ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("Text:percent_visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ 0.0 ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("Menu:modulate")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 0 ) ]
+}
+
+[sub_resource type="Animation" id=87]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/path = NodePath("Menu:visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ false ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("Text:percent_visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ 0.0 ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("Menu:modulate")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 0 ) ]
+}
+
+[node name="PlayerHome" type="Node2D"]
+script = ExtResource( 17 )
+_savegame = ExtResource( 20 )
+
+[node name="TopWalls" type="TileMap" parent="."]
+position = Vector2( 0, 11 )
+tile_set = SubResource( 1 )
+collision_mask = 34
+format = 1
+tile_data = PoolIntArray( -131074, 0, 0, -131073, 0, 0, -196608, 0, 0, -196607, 0, 0, -196606, 0, 0 )
+
+[node name="BottomWalls" type="TileMap" parent="."]
+position = Vector2( 0, 1 )
+z_index = 1
+tile_set = SubResource( 4 )
+cell_size = Vector2( 64, 5 )
+collision_mask = 34
+format = 1
+tile_data = PoolIntArray( 1048574, 0, 0, 1048575, 0, 0, 983040, 1, 0, 983041, 0, 0, 983042, 0, 0 )
+
+[node name="Walls" type="TileMap" parent="."]
+position = Vector2( 0, 33 )
+tile_set = SubResource( 8 )
+cell_size = Vector2( 4, 47 )
+collision_mask = 34
+format = 1
+tile_data = PoolIntArray( -262177, 1, 0, -327632, 0, 0, -196641, 1, 0, -262096, 0, 0, -131105, 1, 0, -196560, 0, 0, -65569, 1, 0, -131024, 0, 0, -33, 1, 0, -65488, 0, 0, 65503, 1, 0, 48, 0, 0 )
+
+[node name="Floor" type="TileMap" parent="."]
+position = Vector2( 0, 28 )
+tile_set = SubResource( 2 )
+cell_size = Vector2( 64, 47 )
+collision_mask = 34
+format = 1
+tile_data = PoolIntArray( -131074, 0, 0, -131073, 0, 0, -196608, 0, 0, -196607, 0, 0, -196606, 0, 0, -65538, 0, 0, -65537, 0, 0, -131072, 0, 0, -131071, 0, 0, -131070, 0, 0, -2, 0, 0, -1, 0, 0, -65536, 0, 0, -65535, 0, 0, -65534, 0, 0, 65534, 0, 0, 65535, 0, 0, 0, 0, 0, 1, 0, 0, 2, 0, 0, 65536, 0, 0 )
+
+[node name="Furniture" type="Node2D" parent="."]
+
+[node name="StaticBody2D" type="StaticBody2D" parent="Furniture"]
+visible = false
+z_index = 1
+collision_mask = 34
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Furniture/StaticBody2D"]
+position = Vector2( -67, -114 )
+shape = SubResource( 10 )
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="Furniture/StaticBody2D"]
+position = Vector2( 7, -120 )
+shape = SubResource( 11 )
+
+[node name="CollisionShape2D3" type="CollisionShape2D" parent="Furniture/StaticBody2D"]
+position = Vector2( 105.5, -110 )
+shape = SubResource( 12 )
+
+[node name="CollisionShape2D4" type="CollisionShape2D" parent="Furniture/StaticBody2D"]
+position = Vector2( 181, -83.5 )
+shape = SubResource( 13 )
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Furniture/StaticBody2D"]
+position = Vector2( 86, -36 )
+scale = Vector2( 5.2, 3.4 )
+polygon = PoolVector2Array( -5, -8.82353, -2.30769, -8.82353, -2.30769, -5.29412, 2.30769, -5.29412, 2.30769, -8.82353, 5, -8.82353, 5, -5.58824, 6.53846, -5.58824, 6.53846, -1.76471, 9.80769, -1.76471, 9.80769, 1.47059, 6.34615, 1.47059, 6.34615, 6.76471, 5.57692, 6.76471, 5.57692, 2.94118, -5.57692, 2.94118, -5.57692, 6.76471, -6.34615, 6.76471, -6.34615, 1.17647, -9.80769, 1.17647, -9.80769, -2.35294, -6.34615, -2.35294, -6.34615, -5.58824, -5, -5.58824 )
+
+[node name="CollisionShape2D5" type="CollisionShape2D" parent="Furniture/StaticBody2D"]
+position = Vector2( -104, 52 )
+shape = SubResource( 83 )
+
+[node name="Sofa" type="Sprite" parent="Furniture"]
+position = Vector2( -67, -116 )
+texture = ExtResource( 8 )
+
+[node name="Armchair1" type="Sprite" parent="Furniture"]
+position = Vector2( -23, -116 )
+texture = ExtResource( 9 )
+
+[node name="Armchair2" type="Sprite" parent="Furniture"]
+position = Vector2( -111, -116 )
+texture = ExtResource( 9 )
+
+[node name="Carpet" type="Sprite" parent="Furniture"]
+position = Vector2( -67, -83 )
+texture = ExtResource( 10 )
+
+[node name="Lamp" type="Sprite" parent="Furniture"]
+position = Vector2( 7, -127 )
+texture = ExtResource( 11 )
+
+[node name="Shadow" type="Sprite" parent="Furniture/Lamp"]
+position = Vector2( 0, 20 )
+texture = ExtResource( 12 )
+
+[node name="Kitchen" type="Sprite" parent="Furniture"]
+position = Vector2( 136, -100 )
+texture = ExtResource( 13 )
+
+[node name="Stove" type="Sprite" parent="Furniture/Kitchen"]
+position = Vector2( -70, -11 )
+texture = ExtResource( 14 )
+
+[node name="Fridge" type="Sprite" parent="Furniture/Kitchen"]
+position = Vector2( -104, -17 )
+texture = ExtResource( 15 )
+
+[node name="Chairs" type="Node2D" parent="Furniture"]
+position = Vector2( 86, -33 )
+scale = Vector2( 1.5, 1.5 )
+
+[node name="Chair1" type="Sprite" parent="Furniture/Chairs"]
+position = Vector2( -12.6667, -16 )
+scale = Vector2( 0.666667, 0.666667 )
+texture = ExtResource( 19 )
+
+[node name="Chair2" type="Sprite" parent="Furniture/Chairs"]
+position = Vector2( 12.6667, -16 )
+scale = Vector2( 0.666667, 0.666667 )
+texture = ExtResource( 19 )
+
+[node name="Chair5" type="Sprite" parent="Furniture/Chairs"]
+position = Vector2( -30, -4.66667 )
+scale = Vector2( 0.666667, 0.666667 )
+texture = ExtResource( 18 )
+
+[node name="Chair6" type="Sprite" parent="Furniture/Chairs"]
+position = Vector2( 30, -4 )
+scale = Vector2( -0.667, 0.667 )
+texture = ExtResource( 18 )
+
+[node name="Table" type="Sprite" parent="Furniture"]
+position = Vector2( 86, -33 )
+scale = Vector2( 1.5, 1.5 )
+texture = ExtResource( 16 )
+
+[node name="Bed" type="Sprite" parent="Furniture"]
+position = Vector2( -104, 52 )
+scale = Vector2( 1.5, 1.5 )
+texture = ExtResource( 32 )
+
+[node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2( 33, 60 )
+current = true
+limit_left = -132
+limit_top = -181
+limit_right = 196
+limit_bottom = 80
+smoothing_enabled = true
+smoothing_speed = 7.0
+offset_v = 0.7
+
+[node name="YSort" type="YSort" parent="."]
+
+[node name="Player" parent="YSort" instance=ExtResource( 2 )]
+position = Vector2( 33, 60 )
+location = "home"
+
+[node name="RemoteTransform2D" type="RemoteTransform2D" parent="YSort/Player"]
+remote_path = NodePath("../../../Camera2D")
+
+[node name="GloriaNPC" parent="YSort" instance=ExtResource( 23 )]
+position = Vector2( 155, -84 )
+quests = [ [ "Lets go! I give you first quest. Go kick 4 bats little asses for start", "Kill 4 bats", null, "killbats", 4, 0 ], [ "For next quest - kill 7 bats! Be careful, i want you unharmed", "Kill 7 bats", null, "killbats", 7, 0 ], [ "That fast little dick slimes... G..g..Go kill them! I need 3", "Kill 3 slimes", null, "killslimes", 3, 0 ], [ "Why that took you so fast? Like you in bed? Ok, little hard - kill 5 of them", "Kill 5 slimes", null, "killslimes", 5, 0 ], [ "OH YEES! But, that was easy, dont think? Now, kill 3 bats and 3 slimes!", "Kill 3 bats", "Kill 3 slimes", "killbatsandslimes", 3, 3 ], [ "I see you tired, be patient baby, last quest. Kill 6 bats and 6 slimes", "Kill 6 bats", "Kill 6 slimes", "killbatsandslimes", 6, 6 ] ]
+dialogueMessages = [ [ "Good boy. Now take next quest\\n'Enter' - Take Quest", "Oh you so hot when work hard! Wanna next quest\\n'Enter' - Yep", "Clean work. Now, take next quest\\n'Enter' - Take Quest" ], [ "Seems you dont want to kill that bitches...", "Bro get your lazy ass up and go to pass quest!", "Huh, you got punch from that nerds?" ] ]
+
+[node name="QuestSystem" type="Node2D" parent="."]
+script = ExtResource( 21 )
+location = "home"
+
+[node name="Exit" type="Node2D" parent="."]
+position = Vector2( 31, 77 )
+script = ExtResource( 22 )
+
+[node name="houseDetector" type="Area2D" parent="Exit"]
+collision_layer = 16
+collision_mask = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Exit/houseDetector"]
+visible = false
+position = Vector2( 1, -14 )
+shape = SubResource( 72 )
+
+[node name="houseText" type="Label" parent="Exit"]
+margin_left = -39.0
+margin_top = -19.0
+margin_right = 68.0
+margin_bottom = -3.0
+rect_scale = Vector2( 0.8, 0.8 )
+custom_fonts/font = SubResource( 73 )
+text = "Press E to exit"
+
+[node name="Canvas" type="CanvasLayer" parent="."]
+pause_mode = 2
+script = ExtResource( 25 )
+
+[node name="Dialogue" type="Control" parent="Canvas"]
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+margin_left = -20.0
+margin_top = -40.0
+margin_right = 20.0
+
+[node name="BG" type="ColorRect" parent="Canvas/Dialogue"]
+margin_left = -140.0
+margin_top = -7.0
+margin_right = 180.0
+margin_bottom = 40.0
+color = Color( 0, 0, 0, 0.305882 )
+
+[node name="Icon" type="TextureRect" parent="Canvas/Dialogue"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -157.0
+margin_top = -23.0
+margin_right = -114.0
+margin_bottom = 26.0
+rect_scale = Vector2( 0.8, 0.8 )
+texture = ExtResource( 24 )
+
+[node name="NPCName" type="Label" parent="Canvas/Dialogue"]
+margin_left = -99.0
+margin_top = -2.0
+margin_right = -59.0
+margin_bottom = 12.0
+custom_fonts/font = SubResource( 74 )
+text = "Gloria:"
+
+[node name="Text" type="Label" parent="Canvas/Dialogue"]
+margin_left = -97.0
+margin_top = 16.0
+margin_right = 443.0
+margin_bottom = 52.0
+rect_scale = Vector2( 0.5, 0.5 )
+custom_fonts/font = SubResource( 74 )
+text = "Wassup bro!"
+
+[node name="ChangeScene" type="Control" parent="Canvas"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+
+[node name="ColorRect" type="ColorRect" parent="Canvas/ChangeScene"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+color = Color( 0, 0, 0, 0 )
+
+[node name="Anim" type="AnimationPlayer" parent="Canvas/ChangeScene"]
+autoplay = "Idle"
+anims/Idle = SubResource( 68 )
+anims/In = SubResource( 69 )
+anims/Out = SubResource( 71 )
+anims/RESET = SubResource( 70 )
+
+[node name="PausePanel" type="Control" parent="Canvas"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+
+[node name="BG" type="ColorRect" parent="Canvas/PausePanel"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+color = Color( 0, 0, 0, 0.478431 )
+
+[node name="Panel" type="TextureRect" parent="Canvas/PausePanel"]
+margin_right = 32.0
+margin_bottom = 64.0
+rect_scale = Vector2( 3, 2.81 )
+texture = ExtResource( 27 )
+
+[node name="Retry" type="Button" parent="Canvas/PausePanel/Panel"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -11.0
+margin_top = -10.0
+margin_right = 53.0
+margin_bottom = 10.0
+rect_scale = Vector2( 0.3, 0.3 )
+custom_styles/hover = SubResource( 79 )
+custom_styles/pressed = SubResource( 80 )
+custom_styles/focus = SubResource( 82 )
+custom_styles/disabled = SubResource( 75 )
+custom_styles/normal = SubResource( 81 )
+
+[node name="Menu" type="Button" parent="Canvas/PausePanel/Panel"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -11.0
+margin_top = 3.0
+margin_right = 53.0
+margin_bottom = 23.0
+rect_scale = Vector2( 0.3, 0.3 )
+custom_styles/hover = SubResource( 60 )
+custom_styles/pressed = SubResource( 61 )
+custom_styles/focus = SubResource( 53 )
+custom_styles/disabled = SubResource( 54 )
+custom_styles/normal = SubResource( 62 )
+
+[node name="Timer" type="Timer" parent="Canvas/PausePanel"]
+pause_mode = 2
+one_shot = true
+autostart = true
+
+[node name="Anim" type="AnimationPlayer" parent="Canvas/PausePanel"]
+pause_mode = 2
+autoplay = "Idle"
+anims/Idle = SubResource( 56 )
+anims/Pause = SubResource( 57 )
+anims/RESET = SubResource( 58 )
+anims/Unpause = SubResource( 59 )
+
+[node name="Ending" type="Control" parent="Canvas"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -20.0
+margin_top = -20.0
+margin_right = 20.0
+margin_bottom = 20.0
+
+[node name="Text" type="Label" parent="Canvas/Ending"]
+margin_left = -61.0
+margin_top = -26.0
+margin_right = 106.0
+margin_bottom = 56.0
+custom_fonts/font = SubResource( 84 )
+text = "So.. It was hard work
+and reward was 
+incredble!!!
+Thank for game, babe"
+align = 1
+percent_visible = 0.0
+
+[node name="Menu" type="Button" parent="Canvas/Ending"]
+visible = false
+modulate = Color( 1, 1, 1, 0 )
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -32.0
+margin_top = 37.0
+margin_right = 32.0
+margin_bottom = 57.0
+custom_styles/hover = SubResource( 60 )
+custom_styles/pressed = SubResource( 61 )
+custom_styles/focus = SubResource( 53 )
+custom_styles/disabled = SubResource( 54 )
+custom_styles/normal = SubResource( 62 )
+
+[node name="Anim" type="AnimationPlayer" parent="Canvas/Ending"]
+autoplay = "Idle"
+anims/Animate = SubResource( 85 )
+anims/Idle = SubResource( 86 )
+anims/RESET = SubResource( 87 )
+
+[node name="AudioPlayer" type="AudioStreamPlayer" parent="."]
+
+[connection signal="body_entered" from="Exit/houseDetector" to="Exit" method="_on_houseDetector_body_entered"]
+[connection signal="body_exited" from="Exit/houseDetector" to="Exit" method="_on_houseDetector_body_exited"]
+[connection signal="pressed" from="Canvas/PausePanel/Panel/Retry" to="Canvas" method="_on_Retry_pressed"]
+[connection signal="pressed" from="Canvas/PausePanel/Panel/Menu" to="Canvas" method="_on_Menu_pressed"]
+[connection signal="pressed" from="Canvas/Ending/Menu" to="Canvas" method="_on_Menu_pressed"]
